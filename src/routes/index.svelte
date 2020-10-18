@@ -1,5 +1,6 @@
 <script>
-	import successkid from 'images/successkid.jpg';
+	import FilmHightlight from '../components/FilmHightlight.svelte';
+	import FilmSelection from '../components/FilmSelection.svelte';
 </script>
 
 <style>
@@ -37,14 +38,9 @@
 </style>
 
 <svelte:head>
-	<title>Sapper project template</title>
+	<title>App name | Home</title>
 </svelte:head>
 
-<h1>Great success!</h1>
+<FilmHightlight/>
 
-<figure>
-	<img alt="Success Kid" src="{successkid}">
-	<figcaption>Have fun with Sapper!</figcaption>
-</figure>
-
-<p><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>
+<FilmSelection/>
