@@ -6,6 +6,14 @@
 
     const listLength = 20;
 
+
+    /*
+    Get film selection.
+    */
+    function getSelection(){
+        console.log('getSelection');
+    }
+
 </script>
 
 <style>
