@@ -20,14 +20,18 @@
     //-------------------------------------------FUNCTIONS---------------------------------
 
 
+    /*
+    Get film data for display.
+    */
     function getFilmHighlight(){
         let film = localStorage.getItem('filmHighlight');
-        //console.log(film);
 
         if(film){
+            //Use data if already contained in local storage.
             movieData = JSON.parse(film);
         }
         else{
+            //Else, fetch data from API.
             fetchFilmHighlight();
         }
     }
@@ -37,14 +41,7 @@
     Fetch the film's data via the API (The Movie Database)
     */
     function fetchFilmHighlight(){
-
         let requestUrl = `${apiUrl}?api_key=${apiKey}`;
-        console.log(requestUrl);
-        console.log("Get film hightlight");
-
-
-        //movieData = localStorage.getItem('movieHighlight');
-        //console.log(movieData);
 
         fetch(requestUrl)
         .then(
@@ -58,19 +55,25 @@
         .then(
             (data) => {
                 movieData = data;
-                console.log(data);
+                //Store film data in local storage for further use.
                 storeMovieHighlightData(data);
             }
         )
     }
 
-
+    /*
+    Store the movie's data into the local storage.
+    @param [Object] data: The film's data
+    */
     function storeMovieHighlightData(data){
-        console.log('Store movie highlight');
         localStorage.setItem('filmHighlight', JSON.stringify(data));
     }
 
 
+    /*
+    Check if local storage already contains data.
+    @param [String] address: address to check in local storage.
+    */
     function checkLocalStorage(address){
         console.log('Check local storage');
         console.log(localStorage.getItem(address));
