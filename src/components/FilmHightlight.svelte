@@ -4,7 +4,10 @@
     const apiKey = `d8aa152441e9d9c755576dd9bbf66733`;
     const apiUrl = `https://api.themoviedb.org/3/movie/550`;
 
-    let movieData;
+    let movieData = {
+        title: 'Title',
+        overview: 'Overview'
+    };
 
 
     //-------------------------------------------Init---------------------------------
@@ -32,8 +35,9 @@
         )
         .then(
             (data) => {
-                movieData = data;
-                console.log(movieData);
+                movieData.title = data.original_title;
+                movieData.overview = data.overview;
+                console.log(data);
             }
         )
     }
@@ -47,7 +51,7 @@
 
 
 <section class="filmHighlight">
-    <h2 class="filmHightlight__title">Highlight</h2>
-    <p class="filmHighlight__synopsis">Synopsis</p>
+    <h2 class="filmHightlight__title">{movieData.title}</h2>
+    <p class="filmHighlight__synopsis">{movieData.overview}</p>
     <button on:click={getFilmHighlight}>Request API</button>
 </section>
