@@ -41,6 +41,8 @@
 	<title>App name | Home</title>
 </svelte:head>
 
+<!--
 <FilmHightlight/>
+-->
 
 <FilmSelection/>

@@ -1,0 +1,8 @@
+{
+    "latest": {
+        "filter": "discover",
+        "query": {
+            "with_keywords": "tokusatsu"
+        }
+    }
+}

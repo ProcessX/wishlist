@@ -1,5 +1,8 @@
 <script>
     // your script goes here
+    import * as queryMult from '../asset/data/RequestQueryMult.json';
+
+    console.log(queryMult);
 </script>
 
 <style>
