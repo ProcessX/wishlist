@@ -2,7 +2,10 @@
     // your script goes here
     import * as queryMult from '../asset/data/RequestQueryMult.json';
 
-    console.log(queryMult);
+    export let title = 'Film selection';
+
+    const listLength = 20;
+
 </script>
 
 <style>
@@ -12,5 +15,6 @@
 <!-- markup (zero or more items) goes here -->
 
 <section class="filmSelection">
-    <h2 class="filmSelection__title">Selection title</h2>
+    <h2 class="filmSelection__title">{title}</h2>
+    
 </section>

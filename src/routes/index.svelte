@@ -45,4 +45,6 @@
 <FilmHightlight/>
 -->
 
-<FilmSelection/>
+<FilmSelection
+	title={'Latest'}
+/>
