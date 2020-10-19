@@ -5,8 +5,9 @@
     const apiUrl = `https://api.themoviedb.org/3/movie/550`;
 
     let movieData = {
-        title: 'Title',
-        overview: 'Overview'
+        original_title: 'Title',
+        overview: 'Overview',
+        poster_path: null
     };
 
 
@@ -35,8 +36,7 @@
         )
         .then(
             (data) => {
-                movieData.title = data.original_title;
-                movieData.overview = data.overview;
+                movieData = data;
                 console.log(data);
             }
         )
@@ -51,7 +51,8 @@
 
 
 <section class="filmHighlight">
-    <h2 class="filmHightlight__title">{movieData.title}</h2>
+    <img class="movieHightlight__poster" src={`http://image.tmdb.org/t/p/w500${movieData.poster_path}`} alt="movie poster"/>
+    <h2 class="filmHightlight__title">{movieData.original_title}</h2>
     <p class="filmHighlight__synopsis">{movieData.overview}</p>
     <button on:click={getFilmHighlight}>Request API</button>
 </section>
