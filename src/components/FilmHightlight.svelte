@@ -48,5 +48,6 @@
 
 <section class="filmHighlight">
     <h2 class="filmHightlight__title">Highlight</h2>
+    <p class="filmHighlight__synopsis">Synopsis</p>
     <button on:click={getFilmHighlight}>Request API</button>
 </section>
