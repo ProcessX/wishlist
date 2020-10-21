@@ -1,7 +1,7 @@
 <script>
     // your script goes here
     import { onMount } from 'svelte';
-    import * as queryMult from '../asset/data/RequestQueryMult.json';
+    import FilmCarousel from '../components/FilmCarousel.svelte';
 
     export let title = 'Film selection';
 
@@ -74,22 +74,14 @@
 
 </script>
 
+
 <style>
     /* your styles go here */
 </style>
 
-<!-- markup (zero or more items) goes here -->
 
 <section class="filmSelection">
     <h2 class="filmSelection__title">{title}</h2>
 
-    <ul class="film__li">
-        
-        {#each selection as film}
-            <li class="film__el">
-                <h3 class="film__title">{film.original_title}</h3>
-            </li>
-        {/each}
-    </ul>
-
+    <FilmCarousel filmList={selection}/>
 </section>
