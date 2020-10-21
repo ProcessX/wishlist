@@ -5,6 +5,7 @@
 
 </script>
 
+
 <style lang="scss">
     /* your styles go here */
 
@@ -30,7 +31,6 @@
     }
 </style>
 
-<!-- markup (zero or more items) goes here -->
 
 <div class="filmCarousel">
     <ul class="filmSample__li">
