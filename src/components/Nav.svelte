@@ -24,7 +24,7 @@
 	li {
 		display: block;
 		float: left;
-		color: $testvar;
+		//color: $testvar;
 	}
 
 	[aria-current] {

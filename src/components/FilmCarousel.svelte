@@ -1,4 +1,5 @@
 <script>
+    import FilmSample from '../components/FilmSample.svelte';
 
     export let filmList = [];
 
@@ -25,16 +26,6 @@
     .filmSample__el{
         width: 120px;
         max-width: 120px;
-        overflow: hidden;
-
-        .filmSample__poster{
-            height: 200px;
-            width: 100%;
-            max-width: 100%;
-            background-color: gray;
-            text-indent: 100%;
-            overflow: hidden;
-        }
     }
 </style>
 
@@ -44,8 +35,7 @@
         <ul class="filmSample__li splide__list">
             {#each filmList as film}
                 <li class="filmSample__el splide__slide">
-                    <div class="filmSample__poster">Poster</div>
-                    <h3 class="filmSample__title">{film.original_title}</h3>
+                    <FilmSample filmData={film}/>
                 </li>
             {/each}
         </ul>
