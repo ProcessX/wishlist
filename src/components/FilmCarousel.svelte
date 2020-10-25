@@ -1,14 +1,21 @@
 <script>
-    // your script goes here
 
     export let filmList = [];
+
+    $:{
+        if(filmList.length > 0)
+            initCarousel();
+    }
+
+    function initCarousel(){
+        console.log('Init carousel');
+
+    }
 
 </script>
 
 
 <style lang="scss">
-    /* your styles go here */
-
     .filmSample__li{
         list-style: none;
         padding: 0;
@@ -32,14 +39,16 @@
 </style>
 
 
-<div class="filmCarousel">
-    <ul class="filmSample__li">
-        {#each filmList as film}
-            <li class="filmSample__el">
-                <div class="filmSample__poster">Poster</div>
-                <h3 class="filmSample__title">{film.original_title}</h3>
-            </li>
-        {/each}
-    </ul>
+<div class="filmCarousel splide">
+    <div class="splide__track">
+        <ul class="filmSample__li splide__list">
+            {#each filmList as film}
+                <li class="filmSample__el splide__slide">
+                    <div class="filmSample__poster">Poster</div>
+                    <h3 class="filmSample__title">{film.original_title}</h3>
+                </li>
+            {/each}
+        </ul>
+    </div>
 </div>
 
