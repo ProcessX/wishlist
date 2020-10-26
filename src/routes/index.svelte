@@ -39,6 +39,7 @@
 
 <svelte:head>
 	<title>App name | Home</title>
+	<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
 </svelte:head>
 
 <!--
