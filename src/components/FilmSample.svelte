@@ -1,17 +1,29 @@
 <script>
-    // your script goes here
     export let filmData;
+    export let filmLoaded;
 
     let filmPosterURL = `http://image.tmdb.org/t/p/w185/${filmData.poster_path}`;
+    let posterHeightRatio = 1.5;
+    let filmVisual;
 
+    $: {
+        if(filmLoaded){
+            setFilmVisualHeight();
+        }
+    }
+
+    function setFilmVisualHeight(){
+        console.log(setFilmVisualHeight);
+    }
 </script>
+
 
 <style lang="scss">
     /* your styles go here */
 
     .filmSample{
         width: 100%;
-        max-width: inherit;
+        max-width: 100%;
     }
 
     .filmSample__visual{
@@ -47,9 +59,9 @@
     }
 </style>
 
-<!-- markup (zero or more items) goes here -->
+
 <div class="filmSample">
-    <div class="filmSample__visual">
+    <div class="filmSample__visual" bind:this={filmVisual}>
         <div class="filmSample__poster" style={`background-image: url(${filmPosterURL})`}>Poster</div>
         <h3 class="filmSample__title">{filmData.original_title}</h3>    
     </div>

@@ -3,20 +3,16 @@
 
     export let filmList = [];
 
-    let carousel = {
-        children: []
-    };
+    let carousel;
+    let filmLoaded = false;
 
-
-    
     $:{
-        if(filmList.length > 0)
+        if(filmList.length > 0){
             setTimeout(initCarousel, 50)
+        }
     }
 
-
     function initCarousel(){
-        console.log('Init carousel');
         var slider = tns({
             container: carousel,
             items: 3,
@@ -26,6 +22,8 @@
             swipeAngle: false,
             speed: 400
         });
+
+        filmLoaded = true;
     }
 
 </script>
@@ -44,6 +42,11 @@
         display: flex;
         justify-content: space-between;
         z-index: 100;
+        pointer-events: none;
+    }
+
+    :global(.tns-controls button){
+        pointer-events: all;
     }
 
     :global(.tns-nav){
@@ -63,7 +66,7 @@
     <ul class="filmSample__li" bind:this={carousel}>
         {#each filmList as film}
             <li class="filmSample__el">
-                <FilmSample filmData={film}/>
+                <FilmSample filmData={film} filmLoaded={filmLoaded}/>
             </li>
         {/each}
     </ul>
