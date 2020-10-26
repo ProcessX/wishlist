@@ -32,18 +32,22 @@
 
 
 <style lang="scss">
-    .carousel{
-        .tns-outer{
-            position: relative;
 
-            .tns-control{
-                height: 100%;
-                width: 100%;
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
-        }
+    :global(.tns-outer){
+        position: relative;
+    }
+
+    :global(.tns-controls){
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        z-index: 100;
+    }
+
+    :global(.tns-nav){
+        display: none;
     }
 
     .filmSample__li{
