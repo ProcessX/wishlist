@@ -10,12 +10,12 @@
     /* your styles go here */
 
     .filmSample{
-        width: inherit;
+        width: 100%;
         max-width: inherit;
     }
 
     .filmSample__visual{
-        width: inherit;
+        width: 100%;
         max-width: inherit;
         height: 200px;
         overflow: hidden;
