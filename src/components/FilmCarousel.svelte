@@ -32,26 +32,39 @@
 
 
 <style lang="scss">
-    .carousel__li{
+    .carousel{
+        .tns-outer{
+            position: relative;
+
+            .tns-control{
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+
+    .filmSample__li{
         list-style: none;
         padding: 0;
         margin: 0;
     }
 
-    .carousel__el{
-        //width: 120px;
-        //max-width: 120px;
-    }
 </style>
 
-<button on:click={initCarousel}>Carousel</button>
-<ul class="carousel__li" bind:this={carousel}>
-    {#each filmList as film}
-        <li class="carousel__el">
-            <FilmSample filmData={film}/>
-        </li>
-    {/each}
-</ul>
+
+<div class="carousel">
+    <ul class="filmSample__li" bind:this={carousel}>
+        {#each filmList as film}
+            <li class="filmSample__el">
+                <FilmSample filmData={film}/>
+            </li>
+        {/each}
+    </ul>
+</div>
+
 
 
 
