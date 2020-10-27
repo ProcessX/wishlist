@@ -7,6 +7,7 @@
     let posterHeight = 1;
     let filmVisual;
 
+    /*
     $: {
         if(filmLoaded){
             setFilmVisualHeight();
@@ -18,6 +19,9 @@
         console.log(filmVisual.offsetWidth);
         posterHeight = filmVisual.offsetWidth * posterHeightRatio;
     }
+
+    window.onresize = setFilmVisualHeight;
+*/
 </script>
 
 
@@ -67,13 +71,14 @@
     <div
         class="filmSample__visual"
         bind:this={filmVisual}
-        style={`height: ${posterHeight}px;`}
     >
         <div class="filmSample__poster" style={`background-image: url(${filmPosterURL})`}>Poster</div>
         <h3 class="filmSample__title">{filmData.original_title}</h3>    
     </div>
+    <!--
     <div class="filmSample__info">
         <p class="filmSample__releaseDate">{filmData.release_date.slice(0,4)}</p>
         <p class="filmSample__rating">{filmData.vote_average}</p>
     </div>
+-->
 </div>
