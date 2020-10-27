@@ -4,6 +4,7 @@
 
     let filmPosterURL = `http://image.tmdb.org/t/p/w185/${filmData.poster_path}`;
     let posterHeightRatio = 1.5;
+    let posterHeight = 1;
     let filmVisual;
 
     $: {
@@ -13,7 +14,9 @@
     }
 
     function setFilmVisualHeight(){
-        console.log(setFilmVisualHeight);
+        console.log('PAF!');
+        console.log(filmVisual.offsetWidth);
+        posterHeight = filmVisual.offsetWidth * posterHeightRatio;
     }
 </script>
 
@@ -61,7 +64,11 @@
 
 
 <div class="filmSample">
-    <div class="filmSample__visual" bind:this={filmVisual}>
+    <div
+        class="filmSample__visual"
+        bind:this={filmVisual}
+        style={`height: ${posterHeight}px;`}
+    >
         <div class="filmSample__poster" style={`background-image: url(${filmPosterURL})`}>Poster</div>
         <h3 class="filmSample__title">{filmData.original_title}</h3>    
     </div>
